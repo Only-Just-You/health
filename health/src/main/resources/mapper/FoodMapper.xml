@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.health.mapper.FoodMapper">
+  <resultMap id="BaseResultMap" type="com.health.entity.Food">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="col" jdbcType="DOUBLE" property="col" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+    <result column="useId" jdbcType="INTEGER" property="useId" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+  </resultMap>
+  <select id="getFood" resultType="com.health.entity.Food">
+    select * from food where id=#{id}
+  </select>
+  <insert id="addFood" parameterType="com.health.entity.Food">
+    insert into food values(#{id}, #{food.name}, #{food.col}, #{food.image}, #{food.useId}, #{food.type})
+  </insert>
+  <update id="addImage" parameterType="String">
+    update food
+    set image = #{path}
+    where id=#{id}
+  </update>
+
+</mapper>

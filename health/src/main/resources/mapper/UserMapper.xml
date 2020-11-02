@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.health.mapper.UserMapper">
+
+  <resultMap id="BaseResultMap" type="com.health.entity.User">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="userName" jdbcType="VARCHAR" property="userName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+  </resultMap>
+  <update id="setUser" parameterType="com.health.entity.User">
+    update user
+    <set>
+      <if test="user.userName != null">userName=#{user.userName},</if>
+      <if test="user.password != null">password=#{user.password},</if>
+      <if test="user.phone != null">phone=#{user.phone},</if>
+      <if test="user.image != null">image=#{user.image}</if>
+    </set>
+    where id=#{id}
+  </update>
+  <update id="addImage">
+    update user
+    set image = #{path}
+    where id=#{id}
+  </update>
+</mapper>

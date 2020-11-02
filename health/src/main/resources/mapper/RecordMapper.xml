@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.health.mapper.RecordMapper">
+  <resultMap id="BaseResultMap" type="com.health.entity.Record">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="tag" jdbcType="INTEGER" property="tag" />
+    <result column="list1" jdbcType="INTEGER" property="list1" />
+    <result column="num1" jdbcType="INTEGER" property="num1" />
+    <result column="list2" jdbcType="INTEGER" property="list2" />
+    <result column="num2" jdbcType="INTEGER" property="num2" />
+    <result column="list3" jdbcType="INTEGER" property="list3" />
+    <result column="num3" jdbcType="INTEGER" property="num3" />
+    <result column="list4" jdbcType="INTEGER" property="list4" />
+    <result column="num4" jdbcType="INTEGER" property="nub4" />
+    <result column="list5" jdbcType="INTEGER" property="list5" />
+    <result column="num5" jdbcType="INTEGER" property="nub5" />
+    <result column="list6" jdbcType="INTEGER" property="list6" />
+    <result column="num6" jdbcType="INTEGER" property="num6" />
+    <result column="list7" jdbcType="INTEGER" property="list7" />
+    <result column="num7" jdbcType="INTEGER" property="num7" />
+    <result column="list8" jdbcType="INTEGER" property="list8" />
+    <result column="num8" jdbcType="INTEGER" property="num8" />
+    <result column="list9" jdbcType="INTEGER" property="list9" />
+    <result column="num9" jdbcType="INTEGER" property="num9" />
+    <result column="list10" jdbcType="INTEGER" property="list10" />
+    <result column="num10" jdbcType="INTEGER" property="num10" />
+  </resultMap>
+  <update id="setRecord" parameterType="com.health.entity.Record">
+    update user
+    <set>
+      <if test="record.tag != null">tag=#{record.tag},</if>
+      <if test="record.list1 != null">list1=#{record.list1},</if>
+      <if test="record.num1 != null">num1=#{record.num1},</if>
+      <if test="record.list2 != null">list2=#{record.list2},</if>
+      <if test="record.num2 != null">num2=#{record.num2},</if>
+      <if test="record.list3 != null">list3=#{record.list3},</if>
+      <if test="record.num3 != null">num3=#{record.num3},</if>
+      <if test="record.list4 != null">list4=#{record.list4},</if>
+      <if test="record.num4 != null">num4=#{record.num4},</if>
+      <if test="record.list5 != null">list5=#{record.list5},</if>
+      <if test="record.num5 != null">num5=#{record.num5},</if>
+      <if test="record.list6 != null">list6=#{record.list6},</if>
+      <if test="record.num6 != null">num6=#{record.num6},</if>
+      <if test="record.list7 != null">list7=#{record.list7},</if>
+      <if test="record.num7 != null">num7=#{record.num7},</if>
+      <if test="record.list8 != null">list8=#{record.list8},</if>
+      <if test="record.num8 != null">num8=#{record.num8},</if>
+      <if test="record.list9 != null">list9=#{record.list9},</if>
+      <if test="record.num9 != null">num9=#{record.num9},</if>
+      <if test="record.list10 != null">list10=#{record.list10},</if>
+      <if test="record.num10 != null">num10=#{record.num10},</if>
+    </set>
+    where id=#{record.id}
+  </update>
+  <insert id="addRecord" parameterType="com.health.entity.Record">
+    insert into record values( #{record.id},
+    #{id},
+    #{record.tag},
+    #{record.list1},
+    #{record.num1},
+    #{record.list2},
+    #{record.num2},
+    #{record.list3},
+    #{record.num3},
+    #{record.list4},
+    #{record.num4},
+    #{record.list5},
+    #{record.num5},
+    #{record.list6},
+    #{record.num6},
+    #{record.list7},
+    #{record.num7},
+    #{record.list8},
+    #{record.num8},
+    #{record.list9},
+    #{record.num9},
+    #{record.list10},
+    #{record.num10}
+    )
+  </insert>
+</mapper>

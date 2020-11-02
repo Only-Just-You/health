@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.health.mapper.UserweightMapper">
+  <resultMap id="BaseResultMap" type="com.health.entity.Userweight">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="TIMESTAMP" property="date" />
+    <result column="weight" jdbcType="DOUBLE" property="weight" />
+  </resultMap>
+  <select id="getWeight" resultType="com.health.entity.Userweight">
+    select * from userweight where id = #{id}
+  </select>
+</mapper>

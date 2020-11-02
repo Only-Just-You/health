@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.health.mapper.ApiMapper">
+    <select id="getUser" resultType="com.health.entity.User">
+        select * from user where userName = #{user.userName} and password = #{user.password}
+    </select>
+
+    <insert id="setUser" parameterType="com.health.entity.User">
+        insert into user(userName, password, phone, image) values(#{user.userName}, #{user.password}, #{user.phone}, #{user.image})
+    </insert>
+
+    <select id="getUserName" resultType="Integer">
+        select id from user where userName = #{user.userName}
+    </select>
+</mapper>
